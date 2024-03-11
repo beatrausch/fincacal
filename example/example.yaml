@@ -1,0 +1,11 @@
+price: 1000
+stay: [ Sun.1, Mon.1, Tue.1, Wed.1, Thu.1, Fri.1, Sat.1, Sun.2, Mon.2, Tue.2 ]
+attendees:
+  - name: Hans
+    nights: [Sun.1, Mon.1, Fri.1, Sat.1, Sun.2, Mon.2]
+  - name: Peter
+    nights: [ Sun.1, Tue.1, Fri.1, Sun.2, Mon.2, Tue.2]
+  - name: Jon
+    nights: [ Sun.1, Wed.1, Fri.1, Sat.1, Sun.2, Mon.2]
+  - name: Max
+    nights: [ Sun.1, Thu.1, Fri.1, Sat.1, Sun.2, Mon.2, Tue.2 ]
