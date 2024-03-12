@@ -12,6 +12,10 @@ on:
 jobs:
 
   build:
+    strategy:
+      matrix:
+        os: [ 'windows', 'linux', 'darwin' ]
+
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -21,8 +25,8 @@ jobs:
       with:
         go-version: '1.22'
 
-    - name: Build
-      run: go build -v ./...
+    - name: Build ${{ matrix.os}}
+      run: GOOS=${{ matrix.os}} go build -v ./...
 
-    - name: Test
-      run: go test -v ./...
+    - name: Test ${{ matrix.os}}
+      run: GOOS=${{ matrix.os}} go test -v ./...
