@@ -3,6 +3,7 @@ module github.com/beatrausch/fincacal
 go 1.21.3
 
 require (
+	github.com/google/go-cmp v0.5.9
 	github.com/pterm/pterm v0.12.79
 	sigs.k8s.io/yaml v1.4.0
 )

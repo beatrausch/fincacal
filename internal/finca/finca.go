@@ -3,7 +3,7 @@ package finca
 import "fmt"
 
 func CalculateAccommodationPriceSummary(accommodation *Accommodation) Summary {
-	pricePerNight := accommodation.Price / float64(accommodation.GetOverallNights())
+	pricePerNight := accommodation.Remainder() / float64(accommodation.GetOverallNights())
 
 	pricePerAttendee := pricePerPerson(accommodation.Attendees,
 		pricePerNightAndPerson(pricePerNight,
@@ -15,6 +15,8 @@ func CalculateAccommodationPriceSummary(accommodation *Accommodation) Summary {
 		Attendees:        len(accommodation.Attendees),
 		OverallNights:    len(accommodation.Stay),
 		OverallPrice:     accommodation.Price,
+		Deposit:          accommodation.Deposit,
+		Remainder:        accommodation.Remainder(),
 		PricePerNight:    pricePerNight,
 		PricePerAttendee: pricePerAttendee,
 	}
